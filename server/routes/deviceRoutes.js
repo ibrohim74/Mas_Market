@@ -1,7 +1,8 @@
 const Router = require('express');
 const router = new Router();
 const deviceController = require('../controller/deviceController');
-router.post('/', deviceController.create);
+const checkRole = require('../middleware/checkRoleMiddleWare');
+router.post('/',checkRole("ADMIN"), deviceController.create);
 router.get('/', deviceController.getAll);
 router.get('/:id', deviceController.getOne);
 

@@ -11,6 +11,5 @@ class BrandController {
         const brands = await Brand.findAll()
         return res.json(brands)
     }
-
 }
 module.exports = new BrandController;
